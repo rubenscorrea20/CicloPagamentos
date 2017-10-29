@@ -1,9 +1,15 @@
+//declarando um componente chamado field
 (function() {
+	//declarando um componente chamado contentHeader
 	angular.module('primeiraApp').component('contentHeader', {
-	bindings: {
-		name: '@',
-		small: '@',
+	bindings: { //definição dos parâmetros do componente
+		name: '@', //string que não se altera
+		small: '@', //string que não se altera
 	},
+	//template que será alimentado pelo componente através da declaração
+    //double mustache seguida da referência padrão do componente $ctrl acrescido
+    //de variaveis e parametros declarados acima
+    //backtick $ctrl - variavel padrão para uso dentro de component
 	template: `
 	<section class="content-header">
 		<h1>{{ $ctrl.name }} <small>{{ $ctrl.small }}</small></h1>

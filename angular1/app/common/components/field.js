@@ -1,22 +1,29 @@
+//declarando um componente chamado field
 (function() {
 	angular.module('primeiraApp').component('field', {
-		bindings: {
-			id: '@',
+		bindings: { //definição dos parâmetros do componente
+			id: '@', //string que não altera
 			label: '@',
 			grid: '@',
 			placeholder: '@',
 			type: '@',
-			model: '=',
-			readonly: '<',
+			model: '=', //binding de duas direções onde as alterações do component reflete no controller e vice-versa
+			readonly: '<', //binding unidirecional ou seja a alteração feita no componente nao vai refletir no parent
 		},
-		controller: [
-			'gridSystem',
+		controller: [ //controller para inserir comportamentos dentro do componente
+			'gridSystem', //presente dentro do gridSystemFactory.js
 		function(gridSystem) {
+			//recebendo como parametro a proria grid declarada acima e atribuindo a
+                //uma nova variavel criada dentro do this chamda gridClasses
 			this.$onInit = () => {
 				this.gridClasses = gridSystem.toCssClasses(this.grid)
+				//a linha acima será executado somente após a inicialização dos binding
 			}
 		}
 		],
+		//template que será alimentado pelo componente através da declaração
+        //double mustache seguida da referência padrão do componente $ctrl acrescido
+        //de variaveis e parametros declarados acima
 		template: `
 			<div class="{{ $ctrl.gridClasses }}">
 				<div class="form-group">
