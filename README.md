@@ -4,7 +4,7 @@ Sistema que calcula ciclos de pagamentos, créditos e debitos usando  Node js, E
 # Backend
 - ~~Implementar o Backend da aplicação com Node Js, Express e Mongodb.~~
 
-- Implementar Frontend com Angular Js.
+- ~~Implementar Frontend com Angular Js.~~
 
 - Implementar Autenticação da API
 
